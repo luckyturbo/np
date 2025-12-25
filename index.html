@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Turbo Repairing Center - Professional Auto Repair Services</title>
+    <meta name="description" content="Lucky Turbo Repairing Center offers professional auto repair services including turbocharger repair, steering systems, hydraulic pumps, and more. Quality service with fair pricing.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Workshop & Repair Services</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- 
+      ========================================
+      CSS SECTION (style.css)
+      ========================================
+    -->
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --primary-color: #FF5722; /* Industrial Orange */
+            --primary-hover: #E64A19;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-light: #F9FAFB;
+            --white: #ffffff;
+            --black: #000000;
+            --nav-height: 80px;
+            --transition-speed: 0.3s;
+        }
+
+        /* --- Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- Utilities --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 6px rgba(255, 87, 34, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--text-dark);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h3 {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+
+        /* --- Top Bar --- */
+        .top-bar {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 0.875rem;
+            display: none; /* Hidden on mobile */
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .top-bar-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon-text {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .icon-text svg {
+            color: var(--primary-color);
+            width: 16px;
+            height: 16px;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            background-color: var(--white);
+            height: var(--nav-height);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Desktop Menu */
+        .desktop-menu {
+            display: none; /* Hidden on mobile */
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Dropdown (Desktop) */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-trigger {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            min-width: 250px;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            border-top: 4px solid var(--primary-color);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.2s ease;
+            padding: 10px 0;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .dropdown-item:hover {
+            background-color: #FFF3E0;
+            color: var(--primary-color);
+        }
+
+        /* Hamburger Button */
+        .hamburger {
+            display: block;
+            color: var(--text-dark);
+        }
+
+        /* --- Mobile Menu (Slide-in) --- */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%; /* Hidden by default */
+            width: 80%;
+            max-width: 300px;
+            height: 100%;
+            background-color: var(--white);
+            z-index: 1002;
+            transition: right 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mobile-menu-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .close-btn {
+            color: var(--text-light);
+        }
+
+        .mobile-menu-content {
+            padding: 20px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: 15px 0;
+            border-bottom: 1px solid #f3f3f3;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Mobile Dropdown */
+        .mobile-dropdown-trigger {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 15px 0;
+            border-bottom: 1px solid #f3f3f3;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .mobile-dropdown-list {
+            display: none; /* Hidden by default */
+            background-color: #f9f9f9;
+            margin: 0 -20px;
+            padding: 10px 20px;
+        }
+
+        .mobile-dropdown-list.show {
+            display: block;
+        }
+
+        .mobile-dropdown-item {
+            display: block;
+            padding: 10px 0;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .mobile-cta {
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .mobile-cta .btn {
+            width: 100%;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 85vh;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/commercial-turbo-repair.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-subtitle {
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* --- Services Preview Section --- */
+        .services-section {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 87, 34, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #111827;
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p, .footer-col ul li {
+            color: #9CA3AF;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-links li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            border-top: 1px solid #374151;
+            padding-top: 20px;
+            text-align: center;
+            color: #6B7280;
+            font-size: 0.875rem;
+        }
+
+        /* --- Media Queries (Responsive) --- */
+        @media (min-width: 768px) {
+            .top-bar {
+                display: block;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            .desktop-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: row;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+      ========================================
+      HTML CONTENT
+      ========================================
+    -->
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span class="icon-text">
+                    <i data-lucide="map-pin"></i> Jadibuti-32 Pepsicola Lane, Kathmandu
+                </span>
+                <span class="icon-text">
+                    <i data-lucide="phone"></i> +977 9851298786
+                </span>
+            </div>
+            <div>
+                <span>Sun - Sat: 8:00 AM - 7:00 PM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <!-- IMPORTANT: Replace the src below with 'ChatGPT_Image_Dec_16__2025__11_39_08_AM-removebg-preview.png' -->
+                <img src="images/Screenshot_2025-12-18_210011-removebg-preview.png" 
+                     alt="Workshop Logo"
+                     onerror="this.src='https://placehold.co/150x80?text=LOGO'">
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="desktop-menu">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="about.html" class="nav-link">ABOUT</a>
+               <div class="dropdown">
+    <button class="nav-link dropdown-trigger">
+        SERVICES <i data-lucide="chevron-down" style="width: 14px;"></i>
+    </button>
+
+    <div class="dropdown-menu">
+        <a href="turbo.html" class="dropdown-item">Turbo Rebuild</a>
+        <a href="steeringbox.html" class="dropdown-item">Steering Box Repair</a>
+        <a href="steeringrack.html" class="dropdown-item">Steering Rack Repair</a>
+        <a href="hydraulicpump.html" class="dropdown-item">Hydraulic Pump Repair</a>
+        <a href="steeringmotor.html" class="dropdown-item">Hydraulic Motor Repair</a>
+        <a href="airdryer.html" class="dropdown-item">Wabco Airdryer / Chika Repair</a>
+        <a href="brakediaphragm.html" class="dropdown-item">Brake Diaphragm Repair</a>
+    </div>
+</div>
+
+                <a href="gallery.html" class="nav-link">GALLERY</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+                
+                <a href="tel:+977 9851298786" class="btn btn-primary">
+                    <i data-lucide="phone-call" style="width: 16px; margin-right: 8px;"></i> Call Now
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger-btn">
+                <i data-lucide="menu" style="width: 32px; height: 32px;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Slide-in Menu -->
+    <div class="mobile-menu-overlay" id="overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-title">Menu</span>
+            <button class="close-btn" id="close-menu-btn">
+                <i data-lucide="x" style="width: 32px; height: 32px;"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-nav-link close-on-click">HOME</a>
+            <a href="about.html" class="mobile-nav-link close-on-click">ABOUT</a>
+            
+            <!-- Mobile Click Dropdown -->
+            <div>
+                <button class="mobile-dropdown-trigger" id="mobile-dropdown-btn">
+                    SERVICES <i data-lucide="chevron-down" style="width: 20px;"></i>
+                </button>
+                <div class="mobile-dropdown-list" id="mobile-dropdown-list">
+                    <a href="turbo.html" class="mobile-dropdown-item close-on-click">Turbo Rebuild</a>
+                    <a href="steeringbox.html" class="mobile-dropdown-item close-on-click">Steering Box Repair</a>
+                    <a href="steeringrack.html" class="mobile-dropdown-item close-on-click">Steering Rack Repair</a>
+                    <a href="hydraulicpump.html" class="mobile-dropdown-item close-on-click">Hydraulic Pump Repair</a>
+                    <a href="steeringmotor.html" class="mobile-dropdown-item close-on-click">Hydraulic Motor Repair</a>
+                    <a href="airdryer.html" class="mobile-dropdown-item close-on-click">Wabco Airdryer / Chika Repair</a>
+                    <a href="brakediaphragm.html" class="mobile-dropdown-item close-on-click">Brake Diaphragm Repair</a>
+                </div>
+            </div>
+
+            <a href="gallery.html" class="mobile-nav-link close-on-click">GALLERY</a>
+            <a href="contact.html" class="mobile-nav-link close-on-click">CONTACT</a>
+        </div>
+        <div class="mobile-cta">
+            <a href="tel:+977 9851298786" class="btn btn-primary">CALL NOW</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="hero-subtitle">Expert Repair Services</span>
+            <h1>PRECISION REPAIRS FOR YOUR VEHICLE</h1>
+            <p>Power, control, and reliability start here. At **Lucky Turbo Repairing Center**, we specialize in rebuilding turbochargers, steering systems, and hydraulic components with precision and care. From hydraulic pumps and motors to air dryers and brake diaphragms, we provide high-quality repairs, fast turnaround, and trusted results for every vehicle.
+</p>
+            <div class="hero-buttons">
+                <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
+                <a href="periodicmaintenance.html" class="btn btn-outline">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- 
+      ========================================
+      JAVASCRIPT SECTION (script.js)
+      ========================================
+    -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // --- Elements ---
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
+        const mobileDropdownBtn = document.getElementById('mobile-dropdown-btn');
+        const mobileDropdownList = document.getElementById('mobile-dropdown-list');
+        const closeLinks = document.querySelectorAll('.close-on-click');
+
+        // --- Functions ---
+
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        function toggleDropdown() {
+            // Toggle visibility class
+            mobileDropdownList.classList.toggle('show');
+            
+            // Rotate icon (optional visual cue)
+            const icon = mobileDropdownBtn.querySelector('svg');
+            if (mobileDropdownList.classList.contains('show')) {
+                icon.style.transform = 'rotate(180deg)';
+                icon.style.transition = 'transform 0.3s';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // --- Event Listeners ---
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        // Toggle mobile dropdown on click
+        mobileDropdownBtn.addEventListener('click', toggleDropdown);
+
+        // Close menu when a link is clicked
+        closeLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+    </script>
+</body>
+</html>
+
+
+    <!-- Why Choose Us Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Us</h2>
+                <p>Professional auto repair services you can trust</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Turbocharger</h3>
+                    <p>Expert balancing and sealing services to restore your turbocharger's performance and efficiency.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Steering Box</h3>
+                    <p>Precise adjusting of lash to ensure smooth and responsive steering control for your vehicle.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </div>
+                    <h3>Steering Rack</h3>
+                    <p>Comprehensive seal and boot replacement to prevent leaks and maintain steering integrity.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h3>Hydraulic Pump</h3>
+                    <p>Professional shaft seal replacement to ensure optimal hydraulic system performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Hydraulic Motor</h3>
+                    <p>Expert rotating group services to maintain the efficiency and longevity of your hydraulic motor.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Wabco Air Dryer/Chika</h3>
+                    <p>Complete desiccant replacement to ensure clean, dry air for your vehicle's braking system.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h3>Brake Diaphragm</h3>
+                    <p>Thorough diaphragm change to maintain proper brake function and safety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="advantages section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lucky Turbo Advantages</h2>
+                <p>What sets us apart from the competition</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Genuine OEM Products</h3>
+                    <p>We use only authentic OEM parts to ensure the highest quality and performance for your vehicle.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Fair Pricing</h3>
+                    <p>Fair Pricing based on the repair work and parts condition.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>State-of-the-Art Workshop</h3>
+                    <p>Our workshop is equipped with essential tools and experienced technicians to handle all types of repairs with care and precision.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Doorstep Express Service</h3>
+                    <p>We offer convenient pickup and delivery services to save you time and hassle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Our simple and efficient service process</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Choose</h3>
+                    <p>Select the service your vehicle needs from our comprehensive range of auto repair solutions.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Book</h3>
+                    <p>Schedule an appointment online or by phone at your convenience.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Fair Pricing</h3>
+                    <p>Pricing depends on repairs and condition of parts.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h3>At Your Doorstep</h3>
+                    <p>Enjoy our free pickup and delivery service for a completely hassle-free experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer Testimonials</h2>
+                <p>What our customers say about our services</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonials-container">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>Lucky Turbo did an excellent job on my truck's turbocharger. The service was prompt, and the pricing was fair. I highly recommend them for any turbo repair needs.</p>
+                        </div>
+                        <div class="testimonial-author">Suresh Kumar</div>
+                        <div class="testimonial-role">Driver Dai</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>Their doorstep service saved me so much time. They picked up my vehicle, repaired the steering issue, and delivered it back to me. Professional and reliable!</p>
+                        </div>
+                        <div class="testimonial-author">Binod Chaudhary</div>
+                        <div class="testimonial-role">Business Owner</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>I've been taking my vehicles to Lucky Turbo for years. Their technicians are knowledgeable, and they always use genuine parts. Trustworthy service every time.</p>
+                        </div>
+                        <div class="testimonial-author">Biswas Dhakal</div>
+                        <div class="testimonial-role">Transport Owner</div>
+                    </div>
+               
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active"></div>
+                    <div class="testimonial-dot"></div>
+                    <div class="testimonial-dot"></div>
+                    <div class="testimonial-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Get a Fair Quote Along With Free Doorstep Pick-up and Drop Facility</h2>
+            <p>Experience our premium auto repair services with the convenience of free vehicle pickup and delivery.</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our services</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What types of vehicles do you service?
+                    </div>
+                    <div class="faq-answer">
+                        We service a wide range of vehicles including cars, trucks, buses, and heavy equipment. Our technicians are trained to handle various makes and models.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer warranty on your repairs?
+                    </div>
+                    <div class="faq-answer">
+                        Every repair is handled carefully by our skilled technicians to ensure your parts perform reliably - giving you peace of mind without unnecessary commitments.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does a typical repair take?
+                    </div>
+                    <div class="faq-answer">
+                        Repair times vary depending on the service needed. Simple repairs may take a few hours, while complex issues might require a day or two. We'll provide an estimated timeline when you book your service.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you use genuine OEM parts?
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely. We believe in using only genuine OEM parts to ensure the best performance and longevity for your vehicle.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is your service area for pickup and delivery?
+                    </div>
+                    <div class="faq-answer">
+                        We serve customers all over Nepal! You can send your autoparts to us via bus from anywhere in Nepal. For quick local services, we also cover Kathmandu, Bhaktapur, Lalitpur areas using our own bike delivery.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How can I schedule a service?
+                    </div>
+                    <div class="faq-answer">
+                        You can schedule a service by calling us directly, filling out the contact form on our website, or visiting our workshop during business hours.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer emergency repair services?
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we offer emergency repair services for urgent situations. Please call us directly for emergency assistance.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What payment methods do you accept?
+                    </div>
+                    <div class="faq-answer">
+                        We accept cash, esewa and bank transfers.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="container">
+            <div class="section-title">
+                <h2>Brands We Serve</h2>
+                <p>We work with all major vehicle brands</p>
+            </div>
+            <div class="brands-slider">
+                <div class="brands-container">
+                    <div class="brand-logo">
+                        <img src="images/TEL_840x840.webp" alt="Brand 1">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/holset-logo-png_seeklogo-320159-removebg-preview.png" alt="Brand 2">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/RANEHOLDIN.NS-94dc14b5.png" alt="Brand 3">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/zf-vector-logo.png" alt="Brand 4">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/png-clipart-turbocharger-garrett-airesearch-business-engine-industry-business-text-people-removebg-preview.png" alt="Brand 5">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/WABCO-Logo-CMYK-removebg-preview.png" alt="Brand 6">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/Suotepower-Logo-Motrparts_1254x630.avif" alt="Brand 7">
+                    </div>
+                     <div class="brand-logo">
+                        <img src="images/TEL_840x840.webp" alt="Brand 1">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/holset-logo-png_seeklogo-320159-removebg-preview.png" alt="Brand 2">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/RANEHOLDIN.NS-94dc14b5.png" alt="Brand 3">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/zf-vector-logo.png" alt="Brand 4">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/png-clipart-turbocharger-garrett-airesearch-business-engine-industry-business-text-people-removebg-preview.png" alt="Brand 5">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/WABCO-Logo-CMYK-removebg-preview.png" alt="Brand 6">
+                    </div>
+                     <div class="brand-logo">
+                        <img src="images/Suotepower-Logo-Motrparts_1254x630.avif" alt="Brand 7">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/TEL_840x840.webp" alt="Brand 1">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/holset-logo-png_seeklogo-320159-removebg-preview.png" alt="Brand 2">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/RANEHOLDIN.NS-94dc14b5.png" alt="Brand 3">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/zf-vector-logo.png" alt="Brand 4">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/png-clipart-turbocharger-garrett-airesearch-business-engine-industry-business-text-people-removebg-preview.png" alt="Brand 5">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/WABCO-Logo-CMYK-removebg-preview.png" alt="Brand 6">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/Suotepower-Logo-Motrparts_1254x630.avif" alt="Brand 7">
+                    </div>
+                     <div class="brand-logo">
+                        <img src="images/TEL_840x840.webp" alt="Brand 1">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/holset-logo-png_seeklogo-320159-removebg-preview.png" alt="Brand 2">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/RANEHOLDIN.NS-94dc14b5.png" alt="Brand 3">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/zf-vector-logo.png" alt="Brand 4">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/png-clipart-turbocharger-garrett-airesearch-business-engine-industry-business-text-people-removebg-preview.png" alt="Brand 5">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/WABCO-Logo-CMYK-removebg-preview.png" alt="Brand 6">
+                    </div>
+                     <div class="brand-logo">
+                        <img src="images/Suotepower-Logo-Motrparts_1254x630.avif" alt="Brand 7">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/TEL_840x840.webp" alt="Brand 1">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/holset-logo-png_seeklogo-320159-removebg-preview.png" alt="Brand 2">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/RANEHOLDIN.NS-94dc14b5.png" alt="Brand 3">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/zf-vector-logo.png" alt="Brand 4">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/png-clipart-turbocharger-garrett-airesearch-business-engine-industry-business-text-people-removebg-preview.png" alt="Brand 5">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/WABCO-Logo-CMYK-removebg-preview.png" alt="Brand 6">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/Suotepower-Logo-Motrparts_1254x630.avif" alt="Brand 7">
+                    </div>
+                     <div class="brand-logo">
+                        <img src="images/TEL_840x840.webp" alt="Brand 1">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/holset-logo-png_seeklogo-320159-removebg-preview.png" alt="Brand 2">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/RANEHOLDIN.NS-94dc14b5.png" alt="Brand 3">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/zf-vector-logo.png" alt="Brand 4">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/png-clipart-turbocharger-garrett-airesearch-business-engine-industry-business-text-people-removebg-preview.png" alt="Brand 5">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/WABCO-Logo-CMYK-removebg-preview.png" alt="Brand 6">
+                    </div>
+                     <div class="brand-logo">
+                        <img src="images/Suotepower-Logo-Motrparts_1254x630.avif" alt="Brand 7">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/TEL_840x840.webp" alt="Brand 1">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/holset-logo-png_seeklogo-320159-removebg-preview.png" alt="Brand 2">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/RANEHOLDIN.NS-94dc14b5.png" alt="Brand 3">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/zf-vector-logo.png" alt="Brand 4">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/png-clipart-turbocharger-garrett-airesearch-business-engine-industry-business-text-people-removebg-preview.png" alt="Brand 5">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/WABCO-Logo-CMYK-removebg-preview.png" alt="Brand 6">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/Suotepower-Logo-Motrparts_1254x630.avif" alt="Brand 7">
+                    </div>
+                     <div class="brand-logo">
+                        <img src="images/TEL_840x840.webp" alt="Brand 1">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/holset-logo-png_seeklogo-320159-removebg-preview.png" alt="Brand 2">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/RANEHOLDIN.NS-94dc14b5.png" alt="Brand 3">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/zf-vector-logo.png" alt="Brand 4">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/png-clipart-turbocharger-garrett-airesearch-business-engine-industry-business-text-people-removebg-preview.png" alt="Brand 5">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="images/WABCO-Logo-CMYK-removebg-preview.png" alt="Brand 6">
+                    </div>
+                     <div class="brand-logo">
+                        <img src="images/Suotepower-Logo-Motrparts_1254x630.avif" alt="Brand 7">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="images/Screenshot_2025-12-18_210036-removebg-preview.png" alt="Lucky Turbo Repairing Center" class="footer-logo">
+                    <p>Lucky Turbo Repairing Center is a premier auto repair facility specializing in turbocharger repair, steering systems, hydraulic pumps, and more. We are committed to providing quality service with genuine parts and fair pricing.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/16pdsFP8eu/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        
+                        <a href="https://www.instagram.com/luckyturbo_repair?igsh=MTAwejRwZjB6MDZ0ZQ==" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-heading">Our Services</h3>
+                    <ul>
+                        <li><a href="periodicmaintenance.html">Periodic Maintenance</a></li>
+                        <li><a href="turbo.html">Turbocharger</a></li>
+                        <li><a href="steeringbox.html">Steering Box</a></li>
+                        <li><a href="steeringrack.html">Steering Rack</a></li>
+                        <li><a href="hydraulicpump.html">Hydraulic Pump</a></li>
+                        <li><a href="steeringmotor.html">Steering Motor</a></li>
+                        <li><a href="airdryer.html">Air Dryer</a></li>
+                        <li><a href="brakediaphragm.html">Brake Diaphragm</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Pepsicola Lane, Jadibuti-32, Kathmandu</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+977 9851298786</p>
+                                <p>+977 9801186386</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info.luckyturbo@gmail.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Sun - Sat: 8:00 AM - 7:00 PM</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lucky Turbo Repairing Center. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="">
+            <div class="lightbox-close"><i class="fas fa-times"></i></div>
+        </div>
+        <div class="lightbox-nav">
+            <div class="lightbox-prev"><i class="fas fa-chevron-left"></i></div>
+            <div class="lightbox-next"><i class="fas fa-chevron-right"></i></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
